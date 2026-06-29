@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Chapter</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+  <div class="nav-left">
+    <a href="#hero" class="logo">
+      <span class="logo-main">What If</span>
+      <span class="logo-sub">multiverse</span>
+    </a>
+  </div>
+
+  <!-- DESKTOP NAV -->
+  <div class="nav-center desktop-nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#featured">Featured</a>
+    <a href="index.html#about">About</a>
+    <a href="terms.html">Terms</a>
+  </div>
+
+  <!-- DESKTOP AUTH -->
+  <div class="nav-right" id="nav-auth"></div>
+
+  <!-- HAMBURGER BUTTON (ALONE) -->
+  <button id="hamburgerBtn" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- MOBILE MENU DRAWER (SEPARATE ELEMENT) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <div class="mobile-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#about">About</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="mobile-auth" id="nav-auth-mobile"></div>
+  </div>
+</nav>
+  </header>
+
+  <section class="chapter-view">
+    
+    <div class="chapter-nav">
+      <a id="prevChapterBtnTop" class="back-link">← Previous</a>
+      <a id="nextChapterBtnTop" class="back-link">Next →</a>
+      
+    </div>
+    
+    <h1 id="chapterTitle"></h1>
+    <div id="chapterViews" class="view-count"></div>
+    <p id="chapterContent"></p>
+
+    
+    <div class="chapter-nav">
+      <a id="prevChapterBtnBottom" class="back-link">← Previous</a>
+      <a id="nextChapterBtnBottom" class="back-link">Next →</a>
+      
+    </div>
+    
+    <div id="branchList" class="branch-list"></div>
+    <a id="storyLink" class="back-link">← Back to Story</a>
+    <a id="createBranchBtn" class="back-link">🌿 Create Branch</a>
+
+  <script type="module" src="js/navbar.js"></script>
+  <script type="module" src="js/readChapter.js"></script>
+
+</body>
+</html>

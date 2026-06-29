@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Story</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+  <div class="nav-left">
+    <a href="#hero" class="logo">
+      <span class="logo-main">What If</span>
+      <span class="logo-sub">multiverse</span>
+    </a>
+  </div>
+
+  <!-- DESKTOP NAV -->
+  <div class="nav-center desktop-nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#featured">Featured</a>
+    <a href="index.html#about">About</a>
+    <a href="terms.html">Terms</a>
+  </div>
+
+  <!-- DESKTOP AUTH -->
+  <div class="nav-right" id="nav-auth"></div>
+
+  <!-- HAMBURGER BUTTON (ALONE) -->
+  <button id="hamburgerBtn" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- MOBILE MENU DRAWER (SEPARATE ELEMENT) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <div class="mobile-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#about">About</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="mobile-auth" id="nav-auth-mobile"></div>
+  </div>
+</nav>
+  </header>
+
+  <!-- Create Story Form -->
+  <section class="story-create">
+    <div class="auth-box">
+      <h2>Create a New Story</h2>
+
+      <form id="create-story-form">
+        <label>Title</label>
+        <input type="text" id="title" required>
+
+        <label>Description</label>
+        <textarea id="description" required></textarea>
+
+        <label>Cover Image URL</label>
+        <input type="text" id="cover_url">
+
+        <label>Tags (comma separated)</label>
+        <input type="text" id="tags">
+
+        <button type="submit" class="auth-btn">Create Story</button>
+      </form>
+
+      <p id="status" class="auth-message"></p>
+    </div>
+  </section>
+
+  
+  <!-- Scripts -->
+  <script type="module" src="js/navbar.js"></script>
+  <script type="module" src="js/createStory.js"></script>
+
+</body>
+</html>

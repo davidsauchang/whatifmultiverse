@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiverse Stories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-left">
+    <a href="#hero" class="logo">
+      <span class="logo-main">What If</span>
+      <span class="logo-sub">multiverse</span>
+    </a>
+  </div>
+
+  <!-- DESKTOP NAV -->
+  <div class="nav-center desktop-nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#featured">Featured</a>
+    <a href="index.html#about">About</a>
+    <a href="terms.html">Terms</a>
+  </div>
+
+  <!-- DESKTOP AUTH -->
+  <div class="nav-right" id="nav-auth"></div>
+
+  <!-- HAMBURGER BUTTON (ALONE) -->
+  <button id="hamburgerBtn" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- MOBILE MENU DRAWER (SEPARATE ELEMENT) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <div class="mobile-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#about">About</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="mobile-auth" id="nav-auth-mobile"></div>
+  </div>
+</nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <h1>What if…</h1>
+            <p class="tagline">every story could split?</p>
+            <a id="startStoryBtn"  class="cta">Start a Story</a>
+            <p class="subtagline">Create a universe. One choice at a time.</p>
+            <a href="#featured" class="cta-secondary">Browse Stories</a>
+            <span class="early-access">Early Access</span>
+
+
+        </div>
+    </header>
+
+    <section id="featured" class="featured">
+    <h2>Featured Stories</h2>
+    <div class="view-toggle">
+        <button id="thumbView" class="active">Thumbnail View</button>
+        <button id="listView">List View</button>
+    </div>
+    
+    <!-- EMPTY container — JS will fill this dynamically -->
+    <div id="storyContainer" class="story-grid thumbnail"></div>
+    </section>
+    
+    <section id="about" class="about-section">
+  <div class="about-box">
+    <h2>About What If Multiverse</h2>
+
+    <p>
+      What If Multiverse is a creative space where every story can split into 
+      infinite possibilities. Whether you are building complex narratives or 
+      exploring divergent paths, this is your platform to write, read, and 
+      share your unique version of reality.
+    </p>
+
+    <p><em>Exploring the art of interactive storytelling.</em></p>
+
+    <hr class="section-divider">
+
+    <h2>Terms & Conditions</h2>
+
+    <p><strong>By posting on What If Multiverse, you agree to the DMO license:</strong></p>
+
+    <ul class="terms-list">
+      <li>Your chapters can be branched, remixed, and continued by other users.</li>
+      <li>You keep ownership, but you allow derivative works.</li>
+      <li>All content must be SFW. No hate, no harassment, no illegal content.</li>
+    </ul>
+  </div>
+</section>
+
+   <footer class="site-footer">
+  <p>Designed by David Sau Chang — Multiverse Stories © 2026</p>
+
+  <div class="footer-links">
+    <span>Other works by David Sau Chang:</span>
+    <a href="https://davidsauchang.github.io/comic-editor-reader/" target="_blank">
+      Comic Editor & Reader
+    </a>
+    <a href="https://your-portfolio-link-here" target="_blank">
+      Portfolio
+    </a>
+  </div>
+</footer>
+
+
+<script type="module" src="js/storyList.js"></script>
+
+<script type="module" src="js/navbar.js"></script>
+<script type="module" src="js/createStory.js"></script>
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

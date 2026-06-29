@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Chapter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+  <span class="logo-main">What If</span>
+  <span class="logo-sub">multiverse</span>
+</a>
+        </div>
+
+        <div class="nav-center">
+            <a href="index.html#hero">Home</a>
+            <a href="index.html#featured">Featured</a>
+            <a href="index.html#create">Create</a>
+        </div>
+
+        <div class="nav-right" id="nav-auth">
+            <!-- JS will fill this -->
+        </div>
+    </nav>
+
+  <section class="chapter-form">
+  <h1>Create Chapter</h1>
+
+  <form id="chapterForm">
+    <input type="text" id="chapterTitle" placeholder="Chapter Title" required>
+    <textarea id="chapterContent" placeholder="Write your chapter..." required></textarea>
+    <button type="submit">Save Chapter</button>
+  </form>
+</section>
+
+
+  <script type="module" src="js/navbar.js"></script>
+  <script type="module" src="js/createChapter.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+/* ============================
+   MOBILE LAYOUT (≤ 768px)
+   ============================ */
+@media (max-width: 768px) {
+
+  /* ----------------------------
+     HIDE DESKTOP NAVIGATION
+     ---------------------------- */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  #nav-auth {
+    display: none !important;
+  }
+
+  /* ----------------------------
+     HAMBURGER BUTTON
+     ---------------------------- */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #4a3f35;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  /* Hide hamburger when menu is open */
+.hamburger.active {
+  display: none;
+}
+
+
+  /* Hamburger → X animation */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* ----------------------------
+     MOBILE MENU DRAWER
+     ---------------------------- */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -260px; /* hidden off-screen */
+    width: 260px;
+    height: 100vh;
+    background: #d3d0d0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: right 0.3s ease;
+    z-index: 9998;
+  }
+
+  /* When opened */
+  .mobile-menu.show {
+    right: 0;
+  }
+
+  /* Close button */
+  .close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #4a3f35;
+    cursor: pointer;
+  }
+
+  /* ----------------------------
+     MOBILE NAV LINKS
+     ---------------------------- */
+  .mobile-links{
+    display: flex-start;
+    flex-direction: column;
+    }
+
+  .mobile-links a {
+    color: #4a3f35;
+    font-size: 1.2rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #444;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* ----------------------------
+     MOBILE AUTH BUTTONS
+     ---------------------------- */
+  .mobile-auth .nav-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* ----------------------------
+     LOGO ADJUSTMENTS
+     ---------------------------- */
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-decoration: none;
+    align-items: center;
+  }
+
+  .logo-main {
+    font-size: 25px;
+    font-weight: bold;
+    color: #a88d68;
+  }
+
+  .logo-sub {
+    font-size: 14px;
+    color: #4a3f35;
+    margin-top: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* MOBILE STORY CARD FIX — prevents text overflow */
+  .story-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap; /* allows wrapping instead of overflow */
+}
+
+.story-header .story-cover {
+  flex-shrink: 0; /* prevents image from shrinking */
+}
+
+.story-header .story-text {
+  flex: 1;
+  min-width: 250px; /* prevents overflow */
+  max-width: 600px; /* keeps readable line length */
+}
+.story-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Cover stays clean and responsive */
+.story-card .story-cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Text container prevents overflow */
+.story-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+
+/* Title */
+.story-card-text h3 {
+  font-size: 18px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Description */
+.story-card-text p {
+  font-size: 15px;
+  line-height: 1.4;
+  max-height: 3.6em; /* ~3 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 25px 20px;
+    border-radius: 10px;
+  }
+
+  .auth-box h2 {
+    font-size: 1.6rem;
+  }
+
+  #signinForm input {
+    font-size: 0.95rem;
+  }
+
+  .auth-btn {
+    font-size: 1rem;
+  }
+}

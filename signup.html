@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html" class="logo">
+      <span class="logo-main">What If</span>
+      <span class="logo-sub">multiverse</span>
+    </a>
+  </div>
+
+  <!-- DESKTOP NAV -->
+  <div class="nav-center desktop-nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#featured">Featured</a>
+    <a href="index.html#about">About</a>
+    <a href="terms.html">Terms</a>
+  </div>
+
+  <!-- DESKTOP AUTH -->
+  <div class="nav-right" id="nav-auth"></div>
+
+  <!-- HAMBURGER BUTTON (ALONE) -->
+  <button id="hamburgerBtn" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- MOBILE MENU DRAWER (SEPARATE ELEMENT) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <div class="mobile-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#about">About</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="mobile-auth" id="nav-auth-mobile"></div>
+  </div>
+</nav>
+  </header>
+
+  <!-- Sign Up Form -->
+  <section class="auth-section">
+    <div class="auth-box">
+      <h2>Create Account</h2>
+
+      <form id="signupForm">
+  <label>Username</label>
+  <input type="text" id="username" required>
+
+  <label>Email</label>
+  <input type="email" id="email" required>
+
+  <label>Password</label>
+  <input type="password" id="password" required>
+
+  <button type="submit" class="auth-btn">Sign Up</button>
+</form>
+
+      <p class="auth-switch">
+        Already have an account?
+        <a href="signin.html">Sign In</a>
+      </p>
+
+      <p id="authMessage" class="auth-message"></p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script type="module" src="js/navbar.js"></script>
+  <script type="module" src="js/signup.js"></script>
+
+</body>
+</html>
