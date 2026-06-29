@@ -49,7 +49,7 @@ export async function signUp(email, password, username) {
     password,
     options: {
       data: { username },
-      emailRedirectTo: "https://YOUR_GITHUB_USERNAME.github.io/whatifmultiverse/verified.html"
+      emailRedirectTo: "https://davidsauchang.github.io/whatifmultiverse/verified.html"
     }
   });
 
