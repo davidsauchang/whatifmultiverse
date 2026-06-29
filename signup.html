@@ -59,13 +59,18 @@
     <div class="auth-box">
       <h2>Create Account</h2>
 
-      <form id="signupForm">
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="text" id="username" placeholder="Username" required>
-  <input type="password" id="password" placeholder="Password" required>
-  <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <form id="signup-form">
+  <label>Username</label>
+  <input type="text" id="username" required>
 
-  <div id="authMessage"></div>
+  <label>Email</label>
+  <input type="email" id="email" required>
+
+  <label>Password</label>
+  <input type="password" id="password" required>
+
+  <label>Confirm Password</label>
+  <input type="password" id="confirm-password" required>
 
   <button type="submit" class="auth-btn">Sign Up</button>
 </form>
