@@ -1,10 +1,10 @@
 import { supabase } from "./dbConnect.js";
 
-const signupForm = document.getElementById("signup-form");
+const signupForm = document.getElementById("signupForm");
 const emailInput = document.getElementById("email");
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
-const confirmPasswordInput = document.getElementById("confirm-password");
+const confirmPasswordInput = document.getElementById("confirmPassword");
 const errorBox = document.getElementById("error-box");
 
 signupForm.addEventListener("submit", async (e) => {
