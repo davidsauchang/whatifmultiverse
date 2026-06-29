@@ -48,7 +48,8 @@ export async function signUp(email, password, username) {
     email,
     password,
     options: {
-      data: { username }
+      data: { username },
+      emailRedirectTo: "https://YOUR_GITHUB_USERNAME.github.io/whatifmultiverse/verified.html"
     }
   });
 
@@ -59,6 +60,7 @@ export async function signUp(email, password, username) {
 
   return data.user;
 }
+
 
 /**
  * Sign out current user
