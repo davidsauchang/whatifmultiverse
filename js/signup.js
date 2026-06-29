@@ -1,41 +1,62 @@
-// /js/signup.js
 import { supabase } from "./dbConnect.js";
-import { getEl } from "./utils/dom.js";
-import { showError, tryAsync } from "./utils/errors.js";
 
-const form = getEl("signupForm");
-const statusEl = getEl("authMessage");
+const signupForm = document.getElementById("signup-form");
+const emailInput = document.getElementById("email");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirm-password");
+const errorBox = document.getElementById("error-box");
 
-/**
- * Handle sign-up
- */
-form.addEventListener("submit", async (e) => {
+signupForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+  errorBox.textContent = "";
 
-  await tryAsync("Signing up", async () => {
-    const email = getEl("email").value.trim();
-    const password = getEl("password").value.trim();
-    const username = getEl("username").value.trim();
+  const email = emailInput.value.trim();
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
+  const confirmPassword = confirmPasswordInput.value.trim();
 
-    if (!email || !password || !username) {
-      showError("authMessage", { message: "All fields are required." });
-      return;
-    }
+  // Confirm password check
+  if (password !== confirmPassword) {
+    errorBox.textContent = "Passwords do not match.";
+    return;
+  }
 
-    const { error } = await supabase.auth.signUp({
+  try {
+    // Create Auth user with metadata + redirect
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        data: { username }
+        data: { username },
+        emailRedirectTo: "https://YOUR_GITHUB_USERNAME.github.io/whatifmultiverse/verified.html"
       }
     });
 
     if (error) {
-      showError("authMessage", error);
+      errorBox.textContent = error.message;
       return;
     }
 
-    statusEl.textContent = "Account created! Redirecting...";
-    window.location.href = "index.html";
-  });
+    // Insert profile row manually (trigger won't fire after metadata update)
+    const userId = data.user.id;
+
+    const { error: profileError } = await supabase
+      .from("profiles")
+      .insert({
+        id: userId,
+        username: username
+      });
+
+    if (profileError) {
+      errorBox.textContent = "Profile creation failed: " + profileError.message;
+      return;
+    }
+
+    // Redirect to "Check your email" page
+    window.location.href = "check-email.html";
+
+  } catch (err) {
+    errorBox.textContent = "Unexpected error: " + err.message;
+  }
 });
